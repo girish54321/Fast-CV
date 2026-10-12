@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Create PDF
-        run: npm create_pdf
+        run: npm run create_pdf
 
       - name: Upload PDF to artifact
         uses: actions/upload-artifact@v4
