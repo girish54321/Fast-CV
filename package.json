@@ -1,0 +1,19 @@
+{
+  "name": "fast-cv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/app.js",
+  "type": "commonjs",
+  "scripts": {
+    "create_pdf": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.11.25"
+  },
+  "dependencies": {
+    "md-to-pdf": "^5.2.5"
+  }
+}
