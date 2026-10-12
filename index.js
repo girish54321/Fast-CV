@@ -2,7 +2,13 @@ const { writeFileSync } = require('fs');
 const { mdToPdf } = require('md-to-pdf');
 
 const createPdf = async () => {
-	const pdf = await mdToPdf({ path: 'README.md' }).catch(console.error);
+	const pdf = await mdToPdf(
+		{
+			path: 'README.md',
+			launch_options: {
+				args: ['--no-sandbox', '--disable-setuid-sandbox']
+			}
+		}).catch(console.error);
 
 	if (pdf) {
 		const outputFilename = 'resume.pdf';
