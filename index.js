@@ -1,5 +1,6 @@
 const { mdToPdf } = require('md-to-pdf');
 const fs = require('fs');
+const path = require('path');
 
 async function generatePDF() {
 	try {
@@ -8,18 +9,16 @@ async function generatePDF() {
 			{
 				launch_options: {
 					headless: true,
-					args: [
-						'--no-sandbox',
-						'--disable-setuid-sandbox',
-						'--disable-dev-shm-usage'
-					]
+					args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
 				}
 			}
 		);
 
 		if (pdf) {
-			fs.writeFileSync('output.pdf', pdf.content);
-			console.log('PDF successfully generated!');
+			const outputPath = path.join(process.cwd(), 'resume.pdf');
+			fs.writeFileSync(outputPath, pdf.content);
+
+			console.log(`PDF successfully generated at: ${outputPath}`);
 		}
 	} catch (error) {
 		console.error('Error generating PDF:', error);

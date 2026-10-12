@@ -25,6 +25,11 @@ jobs:
       - name: Create PDF
         run: npm run create_pdf
 
+      - name: Inspect generated files
+        run: |
+          echo "=== Root Folder Contents ==="
+          ls -la
+
       - name: Upload PDF to artifact
         uses: actions/upload-artifact@v4
         with:
