@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Resume      
-          path: resume.apk     
+          path: resume.pdf     
           retention-days: 30

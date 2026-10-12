@@ -33,5 +33,5 @@ jobs:
         with:
           tag_name: build-${{ github.run_number }}
           name: Build ${{ github.run_number }}
-          files: resume.apk
+          files: resume.pdf
           generate_release_notes: true
