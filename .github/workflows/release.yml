@@ -27,6 +27,8 @@ jobs:
 
       - name: Create PDF
         run: npm run create_pdf
+        env:
+          PUPPETEER_LAUNCH_ARGS: "--no-sandbox --disable-setuid-sandbox"
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2

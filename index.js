@@ -5,9 +5,6 @@ const createPdf = async () => {
 	const pdf = await mdToPdf(
 		{
 			path: 'README.md',
-			launch_options: {
-				args: ['--no-sandbox', '--disable-setuid-sandbox']
-			}
 		}).catch(console.error);
 
 	if (pdf) {
